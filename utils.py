@@ -78,9 +78,8 @@ def moving_avg(traj,N):
 def match(NAME,imgref,strokeref):
     images,strokes = read_database(NAME)
     mtdtwscore = mtdtw_matching(strokes, strokeref)
-    print(mtdtwscore)
     fftscore = fft_matching(images, imgref)
-    if mtdtwscore<1.5 and fftscore>0.98:
+    if mtdtwscore<14 and fftscore>0.98:
         return True
     else:
         return False
